@@ -1,6 +1,6 @@
 const express = require("express");
 const zod = require("zod");
-const { User } = require("../db");
+const { User, Account } = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { authMiddleware } = require("../middleware");
@@ -37,7 +37,7 @@ router.post("/signup", async (req, res) => {
   const { username, firstName, lastName, password } = req.body;
 
   const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hashSync(user.password, salt);
+  const hashedPassword = await bcrypt.hashSync(password, salt);
   const newUser = await User.create({
     username,
     firstName,
