@@ -4,6 +4,7 @@ const { User } = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { authMiddleware } = require("../middleware");
+
 const router = express.Router();
 
 // USER SIGN UP
