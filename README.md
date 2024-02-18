@@ -27,13 +27,18 @@ To get started with the PayTM Clone project, follow these steps:
 
 2. **Set Environment Variables**: Navigate to the `frontend` and `backend` folders and add necessary environment variables. You may need to create a `.env` file and configure it with required variables:
    In the backend/.env file:
-   `    MONGO_URL = your-mongo-url
-    PORT = 3000
-    JWT_SECRET = your-jwt-secret
-   `
+
+   ```
+   MONGO_URL = your-mongo-url
+   PORT = 3000
+   JWT_SECRET = your-jwt-secret
+   ```
+
    In the frontend/.env file:
-   `    VITE_SERVER_URL = your-server-url
-   `
+
+   ```
+   VITE_SERVER_URL = your-server-url
+   ```
 
 3. **Install Dependencies**: Install dependencies in the `frontend` and `backend` folders using npm or yarn:
 
