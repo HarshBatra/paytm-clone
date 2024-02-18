@@ -50,7 +50,7 @@ router.post("/signup", async (req, res) => {
 
   await Account.create({
     userId,
-    balance: 1 + Math.random() * 10000,
+    balance: parseInt(Math.random() * 10000),
   });
 
   // -----  -----
@@ -162,6 +162,15 @@ router.get("/bulk", async (req, res) => {
       _id: user._id,
     })),
   });
+});
+
+// FOR GETTING CURRENT USER INFO
+
+router.get("/getUser", authMiddleware, async (req, res) => {
+  const user = await User.findOne({
+    _id: req.userId,
+  });
+  res.json(user);
 });
 
 module.exports = router;

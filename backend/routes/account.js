@@ -24,7 +24,7 @@ router.post("/transfer", authMiddleware, async (req, res) => {
   // Don't allow transfer to oneself
   if (to === req.userId) {
     await session.abortTransaction();
-    return res.json({ msg: "Cannot Transfer to yourself!" });
+    return res.json({ message: "Cannot Transfer to yourself!" });
   }
 
   // Fetch the accounts within transaction
