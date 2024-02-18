@@ -61,7 +61,7 @@ export const Signup = () => {
             <Button
               onClick={async () => {
                 const response = await axios.post(
-                  "http://localhost:3000/api/v1/user/signup",
+                  import.meta.env.VITE_SERVER_URL + "/api/v1/user/signup",
                   {
                     username,
                     firstName,

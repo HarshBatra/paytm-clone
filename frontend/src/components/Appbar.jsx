@@ -15,7 +15,7 @@ export const Appbar = () => {
       navigate("/signin"); // Redirect to sign-in page if token doesn't exist
     } else {
       axios
-        .get("http://localhost:3000/api/v1/user/getUser", {
+        .get(import.meta.env.VITE_SERVER_URL + "/api/v1/user/getUser", {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
